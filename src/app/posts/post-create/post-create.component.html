@@ -1,0 +1,23 @@
+<mat-card>
+  <form (submit)="onSavePost(postForm)" #postForm="ngForm">
+  <mat-form-field>
+    <input placeholder="Item's name" matInput type="text" name="title" [ngModel]="post?.title" required minlength="2" #title="ngModel">
+       <!-- #title created a name input and now we can ref it below -->
+    <mat-error *ngIf="title.invalid">too short</mat-error>
+  </mat-form-field>
+    <mat-form-field>
+        <input type="number" placeholder="Item's price" matInput name="price" [ngModel]="post?.price" />
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" placeholder="Item's quantity" matInput name="stockq" [ngModel]="post?.stockq" />
+  </mat-form-field>
+    <button type="submit" mat-raised-button color="accent">Save Post</button>
+  </form>
+  </mat-card>
+
+  Please navigate back to the <a href="/">main page</a> after hitting the "Save post" button.
+
+<!--value under [] with single "" will refer to a function-->
+<!--  "#" will create a name to input which can use as a ref-->
+<!--click = on add post => event listener that on Click will activate onAddPost func-->
+

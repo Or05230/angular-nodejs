@@ -1,0 +1,7 @@
+
+
+    <table mat-table *ngFor="let post of posts">
+        <pre>{{ post | json }}</pre>
+    </table>
+
+  <p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts yet.</p>
